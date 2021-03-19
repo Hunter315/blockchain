@@ -20,6 +20,9 @@ class TransactionPool {
         return this.transactions.find(t => t.input.address === address)
     }
 
+    clear(){
+        this.transactions = [];
+    }
     validTransactions(){
         return this.transactions.filter(transaction => {
             const outputTotal = transaction.outputs.reduce((total, output) => {
