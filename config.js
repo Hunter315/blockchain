@@ -1,6 +1,25 @@
-const DIFFICULTY = 3;
-const MINE_RATE = 3000;
-const INITIAL_BALANCE = 500;
+const MINE_RATE = 1000;
+const INITIAL_DIFFICULTY = 3;
+
+const GENESIS_DATA = {
+  timestamp: 1,
+  lastHash: '-----',
+  hash: 'hash-one',
+  difficulty: INITIAL_DIFFICULTY,
+  nonce: 0,
+  data: []
+};
+
+const STARTING_BALANCE = 1000;
+
+const REWARD_INPUT = { address: '*authorized-reward*' };
+
 const MINING_REWARD = 50;
 
-module.exports = { DIFFICULTY, MINE_RATE, INITIAL_BALANCE, MINING_REWARD };
+module.exports = {
+  GENESIS_DATA,
+  MINE_RATE,
+  STARTING_BALANCE,
+  REWARD_INPUT,
+  MINING_REWARD
+};

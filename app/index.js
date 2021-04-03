@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const P2PServer = require('./p2p-server');
 const Wallet = require('../wallet');
 const TransactionPool = require('../wallet/transaction-pool');
-const Miner = require('./miner')
+const Miner = require('./transaction-miner')
 
 const HTTP_PORT = process.env.HTTP_PORT || 3001;
 
