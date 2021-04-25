@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import Transaction from './Transaction';
+import Transaction from '../TransactionPool/Transaction';
 
 class Block extends Component {
   state = { displayTransaction: false };

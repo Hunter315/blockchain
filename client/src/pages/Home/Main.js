@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import FakeCoin_Logo_Back from '../assets/FakeCoin_Logo_Back.png';
 
-class App extends Component {
-  state = { walletInfo: {} };
+const  Main = () =>  {
+  const [walletInfo, setWalletInfo] = React.useState({});
 
-  componentDidMount() {
+  React.useEffect(() => {
     fetch(`${document.location.origin}/api/wallet-info`)
-      .then(response => response.json())
-      .then(json => this.setState({ walletInfo: json }));
-  }
+    .then(response => response.json())
+    .then(json => setWalletInfo(json));
 
-  render() {
-    const { address, balance } = this.state.walletInfo;
+
+  }, []) 
+   
+  
+
+  
+    const { address, balance } = walletInfo;
 
     return (
       <div className='App'>
-        <img className='logo' src={logo}></img>
+        <img className='logo' src={FakeCoin_Logo_Back}></img>
         <br />
         <div>
           Welcome to the blockchain...
@@ -32,7 +36,7 @@ class App extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
-export default App;
+export default Main;

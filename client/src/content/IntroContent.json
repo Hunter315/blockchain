@@ -1,0 +1,13 @@
+{
+  "title": "Get book suggestions. From real people",
+  "text": "Example of what we do here",
+  "button": [
+    {
+      "title": "Find Me a Book"
+    },
+    {
+      "title": "Learn More",
+      "color": "#fff"
+    }
+  ]
+}
