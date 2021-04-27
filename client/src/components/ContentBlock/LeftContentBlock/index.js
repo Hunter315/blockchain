@@ -13,7 +13,7 @@ const LeftContentBlock = ({ icon, title, content, section, t, id }) => {
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
             <SvgIcon
-              src={icon}
+              src={"Minimal_Logo"}
               className="about-block-image"
               width="100%"
               height="100%"

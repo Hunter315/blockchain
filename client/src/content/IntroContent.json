@@ -1,12 +1,12 @@
 {
-  "title": "Get book suggestions. From real people",
-  "text": "Example of what we do here",
+  "title": "This cryptocurrency is useless. No, seriously.",
+  "text": "But you can mine and trade it as though it were useful anyway.",
   "button": [
     {
-      "title": "Find Me a Book"
+      "title": "Mine FakeCoin"
     },
     {
-      "title": "Learn More",
+      "title": "Look at the BlockChain",
       "color": "#fff"
     }
   ]

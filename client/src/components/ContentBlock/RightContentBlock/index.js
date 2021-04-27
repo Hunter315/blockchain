@@ -16,6 +16,7 @@ const RightBlock = ({ title, content, button, icon, t, id,  }) => {
   // };
 
    const getBooks = () => {
+     
   }
 
   return (
@@ -31,6 +32,7 @@ const RightBlock = ({ title, content, button, icon, t, id,  }) => {
                   typeof button === "object" &&
                   button.map((item, id) => {
                     return (
+                      
                       <Button
                         key={id}
                         color={item.color}
@@ -48,7 +50,7 @@ const RightBlock = ({ title, content, button, icon, t, id,  }) => {
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide right>
             <SvgIcon
-              src={icon}
+              src={"Minimal_Logo"}
               className="about-block-image"
               width="100%"
               height="100%"
