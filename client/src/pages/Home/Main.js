@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import FakeCoin_Logo_Back from '../assets/FakeCoin_Logo_Back.png';
+// import FakeCoin_Logo_Back from '../assets/FakeCoin_Logo_Back.png';
 
 const  Main = () =>  {
   const [walletInfo, setWalletInfo] = React.useState({});
 
   React.useEffect(() => {
     fetch(`${document.location.origin}/api/wallet-info`)
-    .then(response => response.json())
-    .then(json => setWalletInfo(json));
+    .then( async response => {
+   
+      let res = response.json();
+      console.log(res)
+    return res
+
+    }
+    )
+    .then(json => {
+      console.log(json)
+      
+      return setWalletInfo(json)})
+    .catch(err => console.log(err));
 
 
   }, []) 
@@ -20,7 +31,7 @@ const  Main = () =>  {
 
     return (
       <div className='App'>
-        <img className='logo' src={FakeCoin_Logo_Back}></img>
+        {/* <img className='logo' src={FakeCoin_Logo_Back}></img> */}
         <br />
         <div>
           Welcome to the blockchain...

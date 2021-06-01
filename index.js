@@ -99,11 +99,11 @@ app.get('/api/mine-transactions', (req, res) => {
 
 app.get('/api/wallet-info', (req, res) => {
   const address = wallet.publicKey;
-
-  res.json({
-    address,
-    balance: Wallet.calculateBalance({ chain: blockchain.chain, address })
-  });
+res.json({"message": "hello"})
+  // res.json({
+  //   address,
+  //   balance: Wallet.calculateBalance({ chain: blockchain.chain, address })
+  // });
 });
 
 app.get('/api/known-addresses', (req, res) => {

@@ -56,8 +56,11 @@ const Home = () => {
 
   const fetchData = async () => {
     await fetch(`${document.location.origin}/api/wallet-info`)
-      .then(response => response.json())
-      .then(json => setWalletInfo({ json }));
+      .then(response => {
+         
+        return response.json()})
+      .then(json => setWalletInfo({ json })).catch(err => console.log(err));
+    
 
   }
 
@@ -70,8 +73,9 @@ const Home = () => {
       await fetchData();
 
     }
-    waiter();
-  }, []);
+    waiter().then(res => console.log(res));
+    console.log(walletInfo)
+  }, [walletInfo]);
 
 
   return (

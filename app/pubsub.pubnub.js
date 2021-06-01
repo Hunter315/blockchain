@@ -3,7 +3,7 @@ const PubNub = require('pubnub');
 const credentials = {
   publishKey: 'pub-c-9965c2a5-fd95-4fda-913c-227f6f847c1c',
   subscribeKey: 'sub-c-c908827e-a473-11eb-b041-f285796cd270',
-  secretKey: process.env.PUBNUB_SECRETheroku
+  secretKey: process.env.PUBNUB_SECRET
 };
 
 const CHANNELS = {
@@ -76,7 +76,9 @@ class PubSub {
   }
 
   publish({ channel, message }) {
- 
+    // there is an unsubscribe function in pubnub
+    // but it doesn't have a callback that fires after success
+    // therefore, redundant publishes to the same local subscriber will be accepted as noisy no-ops
     this.pubnub.publish({ message, channel });
   }
 
