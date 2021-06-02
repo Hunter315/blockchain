@@ -18,7 +18,7 @@ class TransactionPool extends Component {
   }
 
   fetchMineTransactions = () => {
-    //fetch(`http://localhost:3000/api/mine-transactions`)
+    //fetch(`http://localhost:3000/api/mine-transactions`) 
     fetch(`${document.location.origin}/api/mine-transactions`)
 
       .then(response => {
