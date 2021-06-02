@@ -50,17 +50,23 @@ const Home = () => {
 
   const [walletInfo, setWalletInfo] = React.useState({});
 
-  const { address, balance } = walletInfo;
+
 
 
 
   const fetchData = async () => {
+    // await fetch(`http://localhost:3000/api/wallet-info`)
     await fetch(`${document.location.origin}/api/wallet-info`)
+
       .then(response => {
-         
-        return response.json()})
-      .then(json => setWalletInfo({ json })).catch(err => console.log(err));
-    
+
+        return response.json()
+      })
+      .then(async json => {
+        const newJson = await json;
+        return setWalletInfo(newJson)
+      }).catch(err => console.log(err));
+
 
   }
 
@@ -68,14 +74,11 @@ const Home = () => {
 
   useEffect(() => {
     async function waiter() {
-
-
       await fetchData();
-
     }
-    waiter().then(res => console.log(res));
-    console.log(walletInfo)
-  }, [walletInfo]);
+    waiter();
+
+  }, []);
 
 
   return (
@@ -99,6 +102,17 @@ const Home = () => {
       <Blocks></Blocks>
       <ConductTransaction />
       <TransactionPool />
+
+      {console.log(walletInfo)}
+
+      {walletInfo ? (
+        <div className='WalletInfo'>
+          <div>Address: {walletInfo.address}</div>
+          <div>Balance: {walletInfo.balance}</div>
+        </div>
+      ):
+      <div></div>}
+
 
 
 
@@ -147,10 +161,10 @@ export default Home;
 
 
 //   }, []) 
-   
-  
 
-  
+
+
+
 //     const { address, balance } = walletInfo;
 
 //     return (
@@ -171,7 +185,7 @@ export default Home;
 //         </div>
 //       </div>
 //     );
-  
+
 // }
 
 // export default Main;

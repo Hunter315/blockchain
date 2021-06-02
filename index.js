@@ -7,6 +7,7 @@ const PubSub = require('./app/pubsub.pubnub.js');
 const TransactionPool = require('./wallet/transaction-pool');
 const Wallet = require('./wallet');
 const TransactionMiner = require('./app/transaction-miner');
+const cors = require('cors');
 
 const isDevelopment = process.env.ENV === 'development';
 
@@ -23,8 +24,11 @@ const wallet = new Wallet();
 const pubsub = new PubSub({ blockchain, transactionPool, wallet });
 // const pubsub = new PubSub({ blockchain, transactionPool, wallet }); // for PubNub
 const transactionMiner = new TransactionMiner({ blockchain, transactionPool, wallet, pubsub });
-
+let corsOptions = {
+  origin:'http://localhost:1234'
+}
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
@@ -99,11 +103,12 @@ app.get('/api/mine-transactions', (req, res) => {
 
 app.get('/api/wallet-info', (req, res) => {
   const address = wallet.publicKey;
-res.json({"message": "hello"})
-  // res.json({
-  //   address,
-  //   balance: Wallet.calculateBalance({ chain: blockchain.chain, address })
-  // });
+
+  res.json({
+    address,
+    balance: Wallet.calculateBalance({ chain: blockchain.chain, address }),
+    corsOptions: corsOptions
+  });
 });
 
 app.get('/api/known-addresses', (req, res) => {

@@ -5,23 +5,35 @@ import { Link } from 'react-router-dom';
 const  Main = () =>  {
   const [walletInfo, setWalletInfo] = React.useState({});
 
+
+function fetchData(){
+  // fetch(`http://localhost:3000/api/wallet-info`)
+
+  fetch(`${document.location.origin}/api/wallet-info`)
+  .then( async response => {
+ 
+    let res = response.json();
+    console.log(res)
+  return res
+
+  }
+  )
+  .then(json => {
+    console.log(json)
+    
+    return setWalletInfo(json)})
+  .catch(err => console.log(err));
+}
   React.useEffect(() => {
-    fetch(`${document.location.origin}/api/wallet-info`)
-    .then( async response => {
-   
-      let res = response.json();
-      console.log(res)
-    return res
+  
+
+  async function waiter() {
+
+
+      await fetchData();
 
     }
-    )
-    .then(json => {
-      console.log(json)
-      
-      return setWalletInfo(json)})
-    .catch(err => console.log(err));
-
-
+    waiter();
   }, []) 
    
   

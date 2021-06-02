@@ -10,13 +10,17 @@ class TransactionPool extends Component {
   state = { transactionPoolMap: {} };
 
   fetchTransactionPoolMap = () => {
+    // fetch(`http://localhost:3000/api/transaction-pool-map`)
+
     fetch(`${document.location.origin}/api/transaction-pool-map`)
       .then(response => response.json())
       .then(json => this.setState({ transactionPoolMap: json }));
   }
 
   fetchMineTransactions = () => {
+    //fetch(`http://localhost:3000/api/mine-transactions`)
     fetch(`${document.location.origin}/api/mine-transactions`)
+
       .then(response => {
         if (response.status === 200) {
           alert('success');
