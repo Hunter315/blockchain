@@ -1,0 +1,12 @@
+parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"KfKB":[function(require,module,exports) {
+module.exports="/FakeCoin-Minimal.98293747.svg";
+},{}],"biiB":[function(require,module,exports) {
+module.exports="/FakeCoin_Logo_Full.19ec6096.svg";
+},{}],"sU99":[function(require,module,exports) {
+module.exports="/FakeCoin_Minimal_Logo_Blue.f98e5dfc.svg";
+},{}],"g0w3":[function(require,module,exports) {
+module.exports="/FakeCoin_Minimal_Circle_Blue.127d5147.svg";
+},{}],"Dji2":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e,a=l(require("react")),i=l(require("../../assets/FakeCoin-Minimal.svg")),t=l(require("../../assets/FakeCoin_Logo_Full.svg")),r=l(require("../../assets/FakeCoin_Minimal_Logo_Blue.svg")),s=l(require("../../assets/FakeCoin_Minimal_Circle_Blue.svg"));function l(e){return e&&e.__esModule?e:{default:e}}var u=function(t){var l=t.src,u=t.width,o=t.height;switch(l){case"Minimal_Logo":e=r.default;break;case"Minimal_Circle":e=s.default;break;default:e=i.default}return a.default.createElement("img",{src:e,alt:l,width:u,height:o})},o=u;exports.default=o;
+},{"react":"ccIB","../../assets/FakeCoin-Minimal.svg":"KfKB","../../assets/FakeCoin_Logo_Full.svg":"biiB","../../assets/FakeCoin_Minimal_Logo_Blue.svg":"sU99","../../assets/FakeCoin_Minimal_Circle_Blue.svg":"g0w3"}]},{},[], null)
+//# sourceMappingURL=/SvgIcon.92e899e0.js.map
