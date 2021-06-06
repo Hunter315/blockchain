@@ -30,7 +30,7 @@ let corsOptions = {
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 console.log(__dirname)
-app.use(express.static(path.resolve(process.cwd(),'client/dist')));
+app.use(express.static(path.resolve('../client/dist')));
 
 app.get('/api/blocks', (req, res) => {
   res.json(blockchain.chain);
@@ -128,7 +128,7 @@ app.get('/api/known-addresses', (req, res) => {
 
 app.get('*', (req, res) => {
   let directory = process.cwd();
-  res.sendFile(path.resolve(directory, 'client/dist/index.html'));
+  res.sendFile(path.resolve('../client/dist/index.html'));
 });
 
 const syncWithRootState = () => {
