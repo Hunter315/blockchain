@@ -128,7 +128,7 @@ app.get('/api/known-addresses', (req, res) => {
 
 app.get('*', (req, res) => {
   let directory = process.cwd();
-  res.sendFile(path.join(directory, 'client/dist/index.html'));
+  res.sendFile(path.resolve('client/dist/index.html'));
 });
 
 const syncWithRootState = () => {
@@ -201,6 +201,8 @@ const PORT = process.env.PORT || PEER_PORT || DEFAULT_PORT;
 
 app.listen(PORT, () => {
   console.log(`listening at localhost:${PORT}`);
+  console.log(__dirname)
+  console.log(process.cwd())
 
   if (PORT !== DEFAULT_PORT) {
     syncWithRootState();
