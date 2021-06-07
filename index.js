@@ -28,8 +28,8 @@ let corsOptions = {
   origin:'http://localhost:1234'
 }
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
-console.log(__dirname)
+//app.use(cors(corsOptions));
+
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
