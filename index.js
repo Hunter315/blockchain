@@ -128,7 +128,7 @@ app.get('/api/known-addresses', (req, res) => {
 
 app.get('*', (req, res) => {
   let directory = process.cwd();
-  res.sendFile(path.resolve('../client/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 const syncWithRootState = () => {
