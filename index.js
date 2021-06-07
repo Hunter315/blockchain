@@ -30,7 +30,7 @@ let corsOptions = {
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 console.log(__dirname)
-app.use(express.static(path.resolve('../client/dist')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
   res.json(blockchain.chain);
