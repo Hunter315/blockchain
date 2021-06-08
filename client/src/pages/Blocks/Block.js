@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Transaction from '../TransactionPool/Transaction';
+import DarkRapListItem from '../../components/DarkList';
 
 class Block extends Component {
   state = { displayTransaction: false };
@@ -21,9 +22,9 @@ class Block extends Component {
     if (this.state.displayTransaction) {
       return (
         <div>
-          {
+          { 
             data.map(transaction => (
-              <div key={transaction.id}>
+              <div key={transaction.id} >
                 <hr />
                 <Transaction transaction={transaction} />
               </div>
@@ -59,13 +60,13 @@ class Block extends Component {
     const { timestamp, hash } = this.props.block;
 
     const hashDisplay = `${hash.substring(0, 15)}...`;
-
+    let stamp = new Date(timestamp).toLocaleString();
     return (
-      <div className='Block'>
+      <DarkRapListItem hash={hash} timestamp={stamp} styleKey={this.props.styleKey}>
         <div>Hash: {hashDisplay}</div>
         <div>Timestamp: {new Date(timestamp).toLocaleString()}</div>
         {this.displayTransaction}
-      </div>
+        </DarkRapListItem>
     );
   }
 };
