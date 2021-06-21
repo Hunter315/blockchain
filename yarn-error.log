@@ -1,0 +1,129 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\hunter\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\hunter\bin;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files (x86)\QuickTime\QTSystem;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared;C:\Program Files (x86)\Common Files\Roxio Shared\Game1X\DLLShared;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\hunter\AppData\Local\Microsoft\WindowsApps;C:\Users\hunter\AppData\Local\GitHubDesktop\bin;C:\Users\hunter\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\hunter\AppData\Local\Microsoft\WindowsApps;C:\Users\hunter\AppData\Local\Yarn\bin;C:\Users\hunter\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.14.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@ant-design/icons/-/icons-4.6.2.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:129645:19)
+      at Object.onceWrapper (events.js:273:13)
+      at ClientRequest.emit (events.js:182:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:661:40)
+      at Object.onceWrapper (events.js:273:13)
+      at TLSSocket.emit (events.js:182:13)
+      at TLSSocket.Socket._onTimeout (net.js:449:8)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+
+npm manifest: 
+  {
+    "name": "cryptochain",
+    "version": "1.0.0",
+    "engines": {
+      "node": "10.x"
+    },
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest --watchAll",
+      "start": "npm run build-client & node index.js",
+      "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
+      "dev-peer": "cross-env GENERATE_PEER_PORT='true' ENV='development' nodemon index.js",
+      "start-redis": "redis-server --daemonize yes",
+      "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
+      "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+      "clean": "rm -rf .cache client/dist"
+    },
+    "jest": {
+      "testEnvironment": "node"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "cross-env": "^5.2.0",
+      "jest": "^23.6.0",
+      "nodemon": "^1.18.4"
+    },
+    "dependencies": {
+      "@material-ui/core": "^4.11.4",
+      "@material-ui/lab": "^4.0.0-alpha.58",
+      "@mui-treasury/components": "^1.10.1",
+      "@mui-treasury/styles": "^1.13.1",
+      "@testing-library/jest-dom": "^5.11.9",
+      "@testing-library/react": "^11.2.3",
+      "@testing-library/user-event": "^12.6.2",
+      "@types/react": "^17.0.8",
+      "antd": "^4.10.3",
+      "axios": "^0.21.1",
+      "babel-core": "^6.26.3",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-preset-env": "^1.7.0",
+      "babel-preset-react": "^6.24.1",
+      "body-parser": "^1.18.3",
+      "chroma-js": "^2.1.1",
+      "client": "0.0.1",
+      "clsx": "^1.1.1",
+      "cors": "^2.8.5",
+      "elliptic": "^6.4.1",
+      "express": "^4.16.3",
+      "hex-to-binary": "^1.0.1",
+      "history": "^4.7.2",
+      "i18next": "^19.8.4",
+      "i18next-browser-languagedetector": "^6.0.1",
+      "i18next-xhr-backend": "^3.2.2",
+      "parcel-bundler": "^1.10.3",
+      "parcel-plugin-svg-react": "^1.0.4",
+      "pubnub": "^4.31.0",
+      "react": "^17.0.2",
+      "react-bootstrap": "^0.32.4",
+      "react-dom": "^17.0.2",
+      "react-i18next": "^11.8.5",
+      "react-palette": "^1.0.2",
+      "react-redux": "^7.2.3",
+      "react-reveal": "^1.2.2",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "4.0.3",
+      "react-select": "^4.3.0",
+      "react-transition-group": "^4.4.1",
+      "redis": "^2.8.0",
+      "redux": "^4.1.0",
+      "request": "^2.88.0",
+      "styled-components": "^5.2.1",
+      "uuid": "^3.3.2",
+      "web-vitals": "^1.1.0"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

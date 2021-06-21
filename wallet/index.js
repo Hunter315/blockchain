@@ -40,6 +40,7 @@ class Wallet {
       for (let transaction of block.data) {
         if (transaction.input.address === address) {
           hasConductedTransaction = true;
+          
         }
 
         const addressOutput = transaction.outputMap[address];

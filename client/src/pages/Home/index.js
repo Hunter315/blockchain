@@ -65,7 +65,7 @@ const Home = () => {
       .then(async json => {
         const newJson = await json;
         return setWalletInfo(newJson)
-      }).catch(err => console.log(err));
+      }).catch(err => console.log("Wallet INFO ERROR", err));
 
 
   }
