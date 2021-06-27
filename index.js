@@ -99,7 +99,7 @@ app.get('/api/transaction-pool-map', (req, res) => {
 app.get('/api/mine-transactions', (req, res) => {
   transactionMiner.mineTransactions();
 
-  res.redirect('/api/blocks');
+  res.send("Transaction mined successfully");
 });
 
 app.get('/api/wallet-info', (req, res) => {

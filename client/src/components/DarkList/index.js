@@ -9,7 +9,7 @@ import {
 } from '@mui-treasury/components/info';
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
-
+import  './index.css'
 import FakeCoin_Scarlet from '../../assets/FakeCoin_Scarlet.png';
 import FakeCoin_Lime from '../../assets/FakeCoin_Lime.png';
 import FakeCoin_Orange from '../../assets/FakeCoin_Orange.png';
@@ -20,7 +20,7 @@ import FakeCoin_Minimal_Circle_Blue from '../../assets/FakeCoin_Minimal_Circle_B
 
 
 
-const colors = [FakeCoin_Minimal_Circle_Blue, FakeCoin_Scarlet, FakeCoin_Grey, FakeCoin_Orange, FakeCoin_Lime, FakeCoin_Violet]
+const colors = [FakeCoin_Scarlet, FakeCoin_Grey, FakeCoin_Orange, FakeCoin_Lime, FakeCoin_Violet]
 
 
 function determineAvatarColor(styleKey) {
@@ -28,11 +28,11 @@ function determineAvatarColor(styleKey) {
     return colors[idx];
 }
  const DarkRapListItem = (props) => {
-    const avatarStyles = useDynamicAvatarStyles({ size: 70 });
+    const avatarStyles = useDynamicAvatarStyles({ size: 90 });
     console.log(props)
     let avatarColor = determineAvatarColor(props.styleKey);
     return (
-        <Row>
+        <Row style={{backgroundColor : '#3D85C6' }}>
             <Item>
                 <Avatar
                     variant={'rounded'}
@@ -44,8 +44,8 @@ function determineAvatarColor(styleKey) {
             </Item>
             <Info useStyles={useD01InfoStyles}>
                 <InfoCaption>{props.hash}</InfoCaption>
-                <InfoTitle>{props.timestamp}</InfoTitle>
-                <InfoSubtitle>{props.styleKey}</InfoSubtitle>
+                <InfoTitle style={{color: 'black'}}>{props.timestamp}</InfoTitle>
+               
             </Info>
         </Row>
 

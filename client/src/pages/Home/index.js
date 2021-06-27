@@ -55,8 +55,8 @@ const Home = () => {
 
 
   const fetchData = async () => {
-    // await fetch(`http://localhost:3000/api/wallet-info`)
-    await fetch(`${document.location.origin}/api/wallet-info`)
+    await fetch(`http://localhost:3000/api/wallet-info`)
+    // await fetch(`${document.location.origin}/api/wallet-info`)
 
       .then(response => {
 
@@ -65,7 +65,7 @@ const Home = () => {
       .then(async json => {
         const newJson = await json;
         return setWalletInfo(newJson)
-      }).catch(err => console.log(err));
+      }).catch(err => console.log("error fetching wallet info", err));
 
 
   }

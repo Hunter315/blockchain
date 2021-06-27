@@ -8,12 +8,15 @@
     "test": "jest --watchAll",
     "build": "npm run build-client",
     "start": "node index.js",
+    "dev-start": "npm run build-client && nodemon index.js",
+    "old-start": "npm run build-client & node index.js",
     "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
     "beta": "npm run build-client & nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' ENV='development' nodemon index.js",
     "start-redis": "redis-server --daemonize yes",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+
     "clean": "rm -rf .cache client/dist"
   },
   "jest": {
