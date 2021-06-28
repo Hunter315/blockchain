@@ -55,8 +55,8 @@ const Home = () => {
 
 
   const fetchData = async () => {
-    // await fetch(`http://localhost:3000/api/wallet-info`)
-    await fetch(`${document.location.origin}/api/wallet-info`)
+    await fetch(`http://localhost:3000/api/wallet-info`)
+    // await fetch(`${document.location.origin}/api/wallet-info`)
 
       .then(response => {
 

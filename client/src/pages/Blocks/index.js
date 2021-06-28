@@ -40,7 +40,23 @@ class Blocks extends Component {
       <div>
         <div><Link to='/'>Home</Link></div>
         <h3>Blocks</h3>
-        <div>
+       
+        {/* {
+          this.state.blocks.map(block => {
+            return (
+              <Block key={block.hash} block={block} />
+            );
+          })
+        } */}
+{ console.log(this.state.blocks)}
+        {
+         
+          
+          <BasicTimeline props={this.state.blocks} />
+          
+
+        }
+         <div>
           {
             [...Array(Math.ceil(this.state.blocksLength / 5)).keys()].map(key => {
               const paginatedId = key + 1;
@@ -55,20 +71,6 @@ class Blocks extends Component {
             })
           }
         </div>
-        {/* {
-          this.state.blocks.map(block => {
-            return (
-              <Block key={block.hash} block={block} />
-            );
-          })
-        } */}
-{ console.log(this.state.blocks)}
-        {
-         
-          
-          <BasicTimeline props={this.state.blocks} />
-
-        }
       </div>
     );
   }
@@ -78,19 +80,20 @@ const BasicTimeline = props =>  {
 
   let blocks = props.props;
   console.log("Blocks", blocks)
+  
 
 return (
   <Timeline>
    
-    {blocks.map(block => {
+    {blocks.map((block, index) => {
       return (
-        <TimelineItem key={block.hash}>
+        <TimelineItem key={block.hash} >
       <TimelineSeparator>
         <TimelineDot />
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-      <Block block={block} />
+      <Block block={block} styleKey={index} />
         </TimelineContent>
     </TimelineItem>
         

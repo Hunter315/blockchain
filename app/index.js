@@ -55,7 +55,11 @@
 
 // app.post('/mine', (req, res) => {
 //     const block = bc.addBlock(req.body.data);
+<<<<<<< HEAD
 //     console.log("New block added: " + block.toString());
+=======
+//     console.log("new block added: " + block.toString());
+>>>>>>> b61368aa6bc5eaef939454816a465cc3d727dbf4
 
 //     p2pServer.syncChains();
 

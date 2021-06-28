@@ -28,8 +28,8 @@ let corsOptions = {
   origin:'http://localhost:1234'
 }
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
-console.log(__dirname)
+//app.use(cors(corsOptions));
+
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
@@ -129,7 +129,7 @@ app.get('/api/known-addresses', (req, res) => {
 
 app.get('*', (req, res) => {
   let directory = process.cwd();
-  res.sendFile(path.join(directory, 'client/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 const syncWithRootState = () => {
@@ -202,6 +202,8 @@ const PORT = process.env.PORT || PEER_PORT || DEFAULT_PORT;
 
 app.listen(PORT, () => {
   console.log(`listening at localhost:${PORT}`);
+  console.log(__dirname)
+  console.log(process.cwd())
 
   if (PORT !== DEFAULT_PORT) {
     syncWithRootState();
