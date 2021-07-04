@@ -1,7 +1,6 @@
 {
   "name": "fakecoin",
   "version": "1.0.0",
-  
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +15,6 @@
     "start-redis": "redis-server --daemonize yes",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
-
     "clean": "rm -rf .cache client/dist"
   },
   "jest": {
@@ -53,6 +51,8 @@
     "cors": "^2.8.5",
     "elliptic": "^6.4.1",
     "express": "^4.16.3",
+    "firebase": "^8.6.8",
+    "firebaseui": "^4.8.0",
     "hex-to-binary": "^1.0.1",
     "history": "^4.7.2",
     "i18next": "^19.8.4",
@@ -67,6 +67,7 @@
     "react-i18next": "^11.8.5",
     "react-palette": "^1.0.2",
     "react-redux": "^7.2.3",
+    "react-redux-firebase": "^3.10.0",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

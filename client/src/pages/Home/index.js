@@ -49,6 +49,7 @@ const Home = () => {
   const classes = useStyles();
 
   const [walletInfo, setWalletInfo] = React.useState({});
+  const [user, setUser] = React.useState({});
 
 
 
@@ -70,8 +71,6 @@ const Home = () => {
 
   }
 
-
-
   useEffect(() => {
     async function waiter() {
       await fetchData();
@@ -79,7 +78,6 @@ const Home = () => {
     waiter();
 
   }, []);
-
 
   return (
     <Container>

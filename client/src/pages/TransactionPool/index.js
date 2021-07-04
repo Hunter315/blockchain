@@ -4,10 +4,7 @@ import Transaction from './Transaction';
 import { Link } from 'react-router-dom';
 import history from '../../history';
 import CustomizedSnackbars from '../../common/SnackBar';
-<<<<<<< HEAD
-=======
 import CircularIndeterminate from '../../common/LoadICon';
->>>>>>> b61368aa6bc5eaef939454816a465cc3d727dbf4
 
 const POLL_INERVAL_MS = 10000;
 

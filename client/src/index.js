@@ -9,6 +9,10 @@ import store from './redux/store';
 import history from './history';
 import React from 'react';
 import ReactDOM from "react-dom";
+import { useSelector } from 'react-redux'
+import { isLoaded, ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 
 // import Home from './pages/Home'
@@ -19,17 +23,40 @@ import ReactDOM from "react-dom";
 import './index.css';
 
 
+var firebaseConfig = {
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
+};
+const firebaseProps = {
+  userProfile: 'users'
+}
+
+firebase.initializeApp(firebaseConfig);
+function AuthIsLoaded({ children }) {
+  const auth = useSelector(state => state.firebase.auth)
+  if (!isLoaded(auth)) return <div>splash screen...</div>;
+  return children
+}
 
 const App = () =>{
   console.log("APP CALL")
   return (
     // <div>Hi</div>
+    <ReactReduxFirebaseProvider {...firebaseProps} >
       <BrowserRouter>
+      <AuthIsLoaded>
         <I18nextProvider i18n={i18n}>
           <Router history={history}/>
           
         </I18nextProvider>
+        </AuthIsLoaded>
       </BrowserRouter>
+      </ReactReduxFirebaseProvider>
     );
 } 
 
